@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {"CICD 测试"}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {data.time}
