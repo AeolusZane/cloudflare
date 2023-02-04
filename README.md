@@ -72,3 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## cloudflare
 
 cloudflare ui仓库
+
+todo:使用worker box对请求进行缓存
