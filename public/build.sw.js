@@ -23,7 +23,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
 
 // 缓存策略
 workbox.routing.registerRoute(
-    new RegExp('.*\.html'),
+    new RegExp('https://cloudflare-adb.pages.dev/'),
     workbox.strategies.networkFirst()
 );
 workbox.routing.registerRoute(
