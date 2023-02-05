@@ -44,21 +44,27 @@
     // Register A service worker
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-        // navigator.serviceWorker.register(`./build.sw.js`).then(
-        //   function (registration) {
-        //     // Registration was successful
-        //     console.log("[success] register ");
-        //   },
-        //   function (err) {
-        //     // registration failed :(
-        //     console.log("[fail]: ", err);
-        //   }
-        // );
-        navigator.serviceWorker
-          .unregister("./build.sw.js")
-          .then(function (boolean) {
-            console.log("卸载service worker?:", boolean);
-          });
+        // 注销
+        // if ("serviceWorker" in navigator) {
+        //   navigator.serviceWorker.getRegistrations().then((registrations) => {
+        //     registrations.forEach((sw) => {
+        //       sw.unregister();
+        //       console.log("service worker:", sw);
+        //       console.log('注销成功')
+        //     });
+        //   });
+        // }
+        // 注册
+        navigator.serviceWorker.register(`./build.sw.js`).then(
+          function (registration) {
+            // Registration was successful
+            console.log("[success] register ");
+          },
+          function (err) {
+            // registration failed :(
+            console.log("[fail]: ", err);
+          }
+        );
       });
     }
   </script>
