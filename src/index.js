@@ -4,6 +4,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Register A service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    // 注销
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker.getRegistrations().then((registrations) => {
+    //     registrations.forEach((sw) => {
+    //       sw.unregister();
+    //       console.log("service worker:", sw);
+    //       console.log('注销成功')
+    //     });
+    //   });
+    // }
+    // 注册
+    navigator.serviceWorker.register(`./build.sw.js`).then(
+      function (registration) {
+        // Registration was successful
+        console.log("[success] register ");
+      },
+      function (err) {
+        // registration failed :(
+        console.log("[fail]: ", err);
+      }
+    );
+  });
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
