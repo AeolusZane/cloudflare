@@ -54,8 +54,11 @@
         //     console.log("[fail]: ", err);
         //   }
         // );
-        navigator.serviceWorker.unregister('./build.sw.js').then(function (boolean) {
-          console.log('卸载service worker?:',boolean);
+        navigator.serviceWorker
+          .unregister("./build.sw.js")
+          .then(function (boolean) {
+            console.log("卸载service worker?:", boolean);
+          });
       });
     }
   </script>
