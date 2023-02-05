@@ -44,16 +44,18 @@
     // Register A service worker
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-        navigator.serviceWorker.register(`./build.sw.js`).then(
-          function (registration) {
-            // Registration was successful
-            console.log("[success] register ");
-          },
-          function (err) {
-            // registration failed :(
-            console.log("[fail]: ", err);
-          }
-        );
+        // navigator.serviceWorker.register(`./build.sw.js`).then(
+        //   function (registration) {
+        //     // Registration was successful
+        //     console.log("[success] register ");
+        //   },
+        //   function (err) {
+        //     // registration failed :(
+        //     console.log("[fail]: ", err);
+        //   }
+        // );
+        navigator.serviceWorker.unregister('./build.sw.js').then(function (boolean) {
+          console.log('卸载service worker?:',boolean);
       });
     }
   </script>
