@@ -33,5 +33,5 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     new RegExp('.*\.(js|css|jpg|png|gif|ico|json)'), // 这里是任何正则都行，只要能匹配得上的请求路由地址
-    workbox.strategies.cacheFirst()
+    workbox.strategies.staleWhileRevalidate() // 缓存优先
 );
